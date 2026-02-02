@@ -1,0 +1,755 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.container .title {
+  color: var(--accent-primary);
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: color 0.3s ease;
+}
+
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem auto 1rem;
+  padding-top: 0.5rem;
+}
+
+.filters-row .genre-filter {
+  max-width: 200px;
+  margin: 0;
+}
+
+.filters-row .toggle-advanced-filters {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  align-self: center;
+}
+
+.filters-row .toggle-filters-btn {
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  align-self: center;
+  min-width: 200px; 
+}
+
+.filters-row .light .toggle-filters-btn {
+  background-color: #f0f0f0;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+.filters-row .toggle-filters-btn:hover {
+  background-color: #555;
+  border-color: #777;
+}
+
+.filters-row .light .toggle-filters-btn:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+
+.toggle-advanced-filters {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.toggle-filters-btn {
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+
+.light .toggle-filters-btn {
+  background-color: #f0f0f0;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+.toggle-filters-btn:hover {
+  background-color: #555;
+  border-color: #777;
+}
+
+.light .toggle-filters-btn:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+.advanced-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+@media (max-width: 768px) {
+  .filters-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .advanced-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.featured-title {
+  color: #ff4444;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.light .featured-title {
+  color: #000;
+}
+
+.all-movies-title {
+  color: #44aaff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.light .all-movies-title {
+  color: #000;
+}
+
+.light .featured-title {
+  color: #000;
+}
+
+.title .query-text {
+  color: #fff;
+}
+
+.light .title .query-text {
+  color: #000;
+}
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.movies-container div {
+  width: 30%;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--card-bg);
+  padding: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.movies-container div img {
+  max-width: 100%;
+}
+
+.movies-container div img {
+  margin-bottom: 0.2rem;
+}
+
+.movies-container div p {
+  margin-bottom: 0.1rem;
+}
+
+.movies-container div h2 {
+  margin-bottom: 0.1rem;
+}
+
+.movies-container div svg {
+  color: #f7d354;
+}
+
+.movies-container div a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
+}
+
+.movies-container div a svg {
+  font-size: 1.1rem;
+  display: block;
+}
+
+.movies-container div .movie-actions a {
+  padding: 0.2rem;
+}
+
+.movies-container div .movie-actions {
+  display: flex;
+  gap: 0.2rem;
+  margin-top: 0.05rem;
+}
+
+.movies-container div .movie-actions a,
+.movies-container div .movie-actions button {
+  flex: 1 !important;
+  text-align: center;
+  text-decoration: none;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem;
+  min-width: 0;
+  font-size: 0.7rem;
+}
+
+/* Estilos específicos para garantir layout horizontal */
+.movies-container .movie-card .movie-actions-wrapper {
+  width: 100%;
+  margin-top: 0.05rem;
+}
+
+.movies-container .movie-card .movie-actions-row a,
+.movies-container .movie-card .movie-actions-row button {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.08rem;
+  font-size: 0.6rem;
+}
+
+/* Estilos específicos para o cabeçalho */
+.movies-container .movie-card .movie-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.movies-container .movie-card .movie-header h2 {
+  margin: 0;
+  flex: 1;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.movies-container .movie-card .favorite-button-mini {
+  padding: 0.15rem;
+  font-size: 0.7rem;
+  border-width: 1px;
+  min-width: 20px;
+  height: 20px;
+}
+
+/* Tagline na página de detalhes */
+.movie-page .movie-card .movie-tagline {
+  color: #ccc;
+  font-style: italic;
+  font-size: 0.8rem;
+  margin: 0.1rem 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Tagline específico para página de detalhes */
+.movie-tagline-detail {
+  color: #ccc;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* Vote average na página de detalhes */
+.movie-rating-detail {
+  color: #f7d354;
+  font-size: 1.2rem;
+  margin: 0.3rem 0;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.movie-rating-detail svg {
+  color: #f7d354;
+  font-size: 1.3rem;
+}
+
+/* Estilos para paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.pagination-btn {
+  background-color: #c20000;
+  color: #fff;
+  border: 2px solid #c20000;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #ff0000;
+  border-color: #ff0000;
+}
+
+.pagination-btn:disabled {
+  background-color: #666;
+  border-color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.light .pagination-btn:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #666;
+}
+
+.pagination-info {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  min-width: 150px;
+  text-align: center;
+}
+
+.light .pagination-info {
+  color: #000;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.loading p {
+  margin: 0;
+}
+
+/* Estilos para o botão de favorito */
+.movie-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+  width: 100%;
+}
+
+.favorite-button {
+  background-color: transparent;
+  border: 2px solid #666;
+  cursor: pointer;
+}
+
+.favorite-button:hover {
+  background-color: rgba(255, 68, 68, 0.1);
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+.favorite-button.favorited {
+  border-color: #ff4444;
+  color: #ff4444;
+  background-color: rgba(255, 68, 68, 0.1);
+}
+
+.favorite-button.favorited:hover {
+  background-color: rgba(255, 68, 68, 0.2);
+}
+
+/* Reset de estilos que podem interferir */
+.movie-actions *,
+.movie-actions *::before,
+.movie-actions *::after {
+  box-sizing: border-box;
+}
+
+.movie-actions a,
+.movie-actions button {
+  float: none !important;
+  clear: none !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.movie-header *,
+.movie-header *::before,
+.movie-header *::after {
+  box-sizing: border-box;
+}
+
+.movie-header button {
+  float: none !important;
+  clear: none !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+/* Novos wrappers para garantir layout */
+.movie-actions-wrapper {
+  width: 100%;
+  margin-top: 0.1rem;
+}
+
+.movie-actions-row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.3rem !important;
+  width: 100%;
+}
+
+.movie-actions-row a,
+.movie-actions-row button {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.15rem;
+  font-size: 0.7rem;
+}
+
+/* Estilos para o cabeçalho com título e botão de favorito */
+.movie-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.movie-header h2 {
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+/* Botão de favorito mini */
+.favorite-button-mini {
+  background-color: transparent;
+  border: 1px solid #666;
+  border-radius: 4px;
+  color: #666;
+  padding: 0.15rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+  min-width: 20px;
+  height: 20px;
+}
+
+.favorite-button-mini:hover {
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+.favorite-button-mini.favorited {
+  border-color: #ff4444;
+  color: #ff4444;
+  background-color: rgba(255, 68, 68, 0.1);
+}
+
+.favorite-button-mini.favorited:hover {
+  background-color: rgba(255, 68, 68, 0.2);
+}
+
+/* Estilos para movie tagline */
+.movie-tagline {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 300;
+  min-height: 1.2rem; /* Garante altura mínima para consistência */
+}
+
+.movie-tagline:empty,
+.movie-tagline-detail:empty {
+  min-height: 1.2rem; /* Mantém espaço mesmo quando vazio */
+}
+
+.movie-tagline:not(:empty),
+.movie-tagline-detail:not(:empty) {
+  min-height: auto; /* Permite altura natural quando tem conteúdo */
+}
+
+/* Tratamento para taglines vazias */
+.movie-tagline[data-empty="true"],
+.movie-tagline-detail[data-empty="true"] {
+  visibility: hidden;
+  min-height: 1.2rem;
+}
+
+/* Tagline na página de detalhes do filme */
+.movie-page .movie-card .movie-tagline-detail {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+/* Vote average na página de detalhes do filme */
+.movie-page .movie-card .movie-rating-detail {
+  color: #f7d354;
+  font-size: 1.2rem;
+  margin: 0.3rem 0;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+.movie-page .movie-card .movie-rating-detail svg {
+  color: #f7d354;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+/* Container para gêneros e nota na mesma linha */
+.genres-rating-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.60rem  !important;
+  margin: 0.05rem 0 !important;
+  padding: 0.05rem !important;
+  min-height: 1.2rem !important;
+  width: 100% !important;
+  flex-shrink: 0 !important;
+}
+
+.movie-genres-horizontal {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  align-items: center !important;
+  flex: 1 1 auto !important;
+  justify-content: flex-start !important;
+}
+
+.movie-rating-small {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.05rem !important;
+  color: #f7d354 !important;
+  font-weight: bold !important;
+  font-size: 0.6rem !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+  justify-content: center !important;
+  padding: 0.03rem 0.15rem !important;
+  background-color: rgba(247, 211, 84, 0.15) !important;
+  border-radius: 3px !important;
+  transition: all 0.3s ease !important;
+}
+
+.light .movie-rating-small {
+  color: #000 !important;
+  background-color: rgba(247, 211, 84, 0.5) !important;
+}
+
+.movie-year-small {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.15rem !important;
+  color: var(--text-secondary) !important;
+  font-weight: bold !important;
+  font-size: 0.6rem !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+  justify-content: center !important;
+  padding: 0.03rem 0.15rem !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 3px !important;
+  transition: all 0.3s ease !important;
+}
+
+.light .movie-year-small {
+  color: #000 !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.movie-rating-small svg {
+  color: #f7d354;
+  font-size: 0.8rem;
+}
+
+.light .movie-rating-small svg {
+  color: #000;
+}
+
+/* Estilos para gêneros nos cards - badges em linha */
+.movie-genres {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 0.1rem;
+  justify-content: center;
+  margin: 0.05rem 0;
+  min-height: 1rem;
+}
+
+.genre-badge {
+  background-color: transparent;
+  color: #f7d354;
+  padding: 0.1rem 0.25rem;
+  border-radius: 3px;
+  font-size: 0.55rem;
+  border: 1px solid rgba(247, 211, 84, 0.2);
+  white-space: nowrap;
+  display: inline-block;
+  font-weight: bold;
+  min-width: 0;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-right: 0.1rem;
+  transition: all 0.3s ease;
+}
+
+.light .genre-badge {
+  background-color: rgba(247, 211, 84, 0.5);
+  color: #000;
+  border: 1px solid rgba(247, 211, 84, 0.7);
+}
+
+.genres-loading {
+  color: var(--text-muted);
+  font-size: 0.6rem;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.light .genres-loading {
+  color: #000;
+}
+
+.genres-loading-inline {
+  color: var(--text-muted);
+  font-size: 0.6rem;
+  font-style: italic;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.light .genres-loading-inline {
+  color: #000;
+}
+
+/* Estilos para página de favoritos */
+.no-favorites {
+  text-align: center;
+  color: var(--text-primary);
+  padding: 3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: color 0.3s ease;
+}
+
+.no-favorites h3 {
+  color: var(--accent-primary);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.no-favorites p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+/* Responsividade para gêneros nos cards */
+@media (max-width: 768px) {
+  .movie-genres {
+    gap: 0.2rem;
+    margin: 0.2rem 0;
+  }
+  
+  .genre-badge {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.4rem;
+  }
+}

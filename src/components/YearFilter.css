@@ -1,0 +1,104 @@
+.year-filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 1rem auto;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.year-filter-inputs {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.year-input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.year-input-group label {
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.year-input-group input {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.year-input-group input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.year-filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.apply-year-filter-btn, .reset-year-filter-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.apply-year-filter-btn {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.apply-year-filter-btn:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+}
+
+.apply-year-filter-btn:disabled {
+  background-color: var(--bg-tertiary);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.reset-year-filter-btn {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.reset-year-filter-btn:hover:not(:disabled) {
+  background-color: var(--bg-tertiary);
+}
+
+.reset-year-filter-btn:disabled {
+  background-color: var(--bg-tertiary);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+  .year-filter-container {
+    max-width: 100%;
+    margin: 1rem;
+  }
+  
+  .year-filter-inputs {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}

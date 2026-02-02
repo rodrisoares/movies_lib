@@ -1,0 +1,24 @@
+@import './styles/themes.css';
+
+* {
+  font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: #c20000;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: #ff0000;
+}

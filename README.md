@@ -40,6 +40,7 @@ O **Movies Lib** oferece uma experiência rica e completa para os amantes de cin
 - **[React](https://react.dev/)**: Biblioteca para construção da interface de usuário.
 - **[Vite](https://vitejs.dev/)**: Ferramenta de build e desenvolvimento rápido.
 - **[React Router DOM](https://reactrouter.com/en/main)**: Para gerenciamento de rotas na aplicação.
+- **[Redux](https://redux.js.org/)**: Para gerenciamento de estado.
 - **[React Icons](https://react-icons.github.io/react-icons/)**: Para ícones modernos e personalizáveis.
 
 ---

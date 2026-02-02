@@ -8,9 +8,9 @@ import {
   BsArrowLeft,
 } from "react-icons/bs";
 
-import MovieCard from "../components/MovieCard";
-import LoadingSpinner from "../components/LoadingSpinner";
-import ErrorMessage from "../components/ErrorMessage";
+import MovieCard from "../features/movies/components/MovieCard";
+import LoadingSpinner from "../features/ui/feedback/LoadingSpinner";
+import ErrorMessage from "../features/ui/feedback/ErrorMessage";
 
 import "./Movie.css";
 

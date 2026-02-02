@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import MovieCard from "../components/MovieCard";
-import { useFavorites } from "../hooks/useFavorites";
-import LoadingSpinner from "../components/LoadingSpinner";
-import ErrorMessage from "../components/ErrorMessage";
+import MovieCard from "../features/movies/components/MovieCard";
+import { useFavorites } from "../app/providers/FavoritesProvider";
+import LoadingSpinner from "../features/ui/feedback/LoadingSpinner";
+import ErrorMessage from "../features/ui/feedback/ErrorMessage";
 
 import "./MoviesGrid.css";
 

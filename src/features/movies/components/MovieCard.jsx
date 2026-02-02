@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FaStar, FaHeart, FaRegHeart, FaInfoCircle } from "react-icons/fa";
-import { useFavorites } from "../hooks/useFavorites";
+import { useFavorites } from "../../../app/providers/FavoritesProvider";
 
 const imagesURL = import.meta.env.VITE_IMG;
 const moviesURL = import.meta.env.VITE_API;

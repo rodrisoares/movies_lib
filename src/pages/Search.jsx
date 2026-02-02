@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import MovieCard from "../components/MovieCard";
-import YearFilter from "../components/YearFilter";
-import RatingFilter from "../components/RatingFilter";
-import LoadingSpinner from "../components/LoadingSpinner";
-import ErrorMessage from "../components/ErrorMessage";
+import MovieCard from "../features/movies/components/MovieCard";
+import YearFilter from "../features/search/components/YearFilter";
+import RatingFilter from "../features/search/components/RatingFilter";
+import LoadingSpinner from "../features/ui/feedback/LoadingSpinner";
+import ErrorMessage from "../features/ui/feedback/ErrorMessage";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const searchURL = import.meta.env.VITE_SEARCH;

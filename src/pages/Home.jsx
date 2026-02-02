@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import MovieCard from "../components/MovieCard";
-import GenreFilter from "../components/GenreFilter";
-import AdvancedFilters from "../components/AdvancedFilters";
-import LoadingSpinner from "../components/LoadingSpinner";
-import ErrorMessage from "../components/ErrorMessage";
+import MovieCard from "../features/movies/components/MovieCard";
+import GenreFilter from "../features/search/components/GenreFilter";
+import AdvancedFilters from "../features/search/components/AdvancedFilters";
+import LoadingSpinner from "../features/ui/feedback/LoadingSpinner";
+import ErrorMessage from "../features/ui/feedback/ErrorMessage";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 import "./MoviesGrid.css";

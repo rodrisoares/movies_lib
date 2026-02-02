@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import { FavoritesProvider } from "./contexts/FavoritesContext";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import Navbar from "../features/ui/layout/Navbar";
+import { FavoritesProvider } from "./providers/FavoritesProvider";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 import "./App.css";
 

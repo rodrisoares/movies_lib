@@ -11,6 +11,9 @@ export const useFavoritesContext = () => {
   return context;
 };
 
+// Export nomeado para compatibilidade
+export const useFavorites = useFavoritesContext;
+
 export const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
 

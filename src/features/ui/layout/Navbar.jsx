@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { BiCameraMovie, BiSearchAlt2, BiStar, BiMovie, BiHeart, BiSun, BiMoon } from "react-icons/bi";
-import { useTheme } from "../contexts/ThemeContext";
-import SearchSuggestions from "./SearchSuggestions";
+import { useTheme } from "../../../app/providers/ThemeProvider";
+import SearchSuggestions from "../../search/components/SearchSuggestions";
 
 import "./Navbar.css";
 
